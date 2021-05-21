@@ -12,6 +12,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(@RequestParam(required = false, defaultValue = "new user") String name, Model model) {
         model.addAttribute("name", name);
+        System.out.println("Programm on the index page");
         return "index";
     }
 
