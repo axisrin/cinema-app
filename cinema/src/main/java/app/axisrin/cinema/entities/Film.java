@@ -3,7 +3,7 @@ package app.axisrin.cinema.entities;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @Entity
@@ -13,19 +13,19 @@ public class Film {
     private Long id;
     private String nameFilm;
     private String descriptionFilm;
-    @Temporal(TemporalType.DATE)
     private Date firstShowDate;
-    @Temporal(TemporalType.DATE)
     private Date lastShowDate;
+    private String tagFilm;
 
     public Film() {
     }
 
-    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate) {
+    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate, String tagFilm) {
         this.nameFilm = nameFilm;
         this.descriptionFilm = descriptionFilm;
         this.firstShowDate = firstShowDate;
         this.lastShowDate = lastShowDate;
+        this.tagFilm = tagFilm;
     }
 
     public Long getId() {
@@ -66,5 +66,13 @@ public class Film {
 
     public void setLastShowDate(Date lastShowDate) {
         this.lastShowDate = lastShowDate;
+    }
+
+    public String getTagFilm() {
+        return tagFilm;
+    }
+
+    public void setTagFilm(String tagFilm) {
+        this.tagFilm = tagFilm;
     }
 }

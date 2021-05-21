@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -23,22 +23,22 @@ public class FilmController {
     @GetMapping
     public String showFilmes(Model model) {
         List<Film> filmes = filmRepo.findAll();
-        model.addAttribute(filmes);
+        model.addAttribute("filmes",filmes);
         System.out.println("meth showFilmes filmes is " + filmes.toString());
         return "films";
     }
 
     @PostMapping
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public String addFilmes(@RequestParam String nameFilm,
                             @RequestParam String descriptionFilm,
+                            @RequestParam String tagFilm,
                             @RequestParam Date firstDate,
                             @RequestParam Date lastDate,
                             Model model) {
-        Film film = new Film(nameFilm, descriptionFilm, firstDate, lastDate);
+        Film film = new Film(nameFilm, descriptionFilm, firstDate, lastDate, tagFilm);
         filmRepo.save(film);
         List<Film> filmes = filmRepo.findAll();
-        model.addAttribute(filmes);
+        model.addAttribute("filmes",filmes);
         return "films";
     }
 

@@ -9,18 +9,20 @@
         <form method="post">
             <input type="text" name="nameFilm" placeholder="Введите название фильма" />
             <input type="text" name="descriptionFilm" placeholder="Введите Описание Фильма" />
+            <input type="text" name="tagFilm" placeholder="Введите Жанр" />
             <input type="date" name="firstDate" placeholder="Начало показа" />
             <input type="date" name="lastDate" placeholder="Конец показа" />
             <button type="submit">Добавить</button>
         </form>
     </div>
     <br>
-    <div th:each="film : ${filmes}">
-        <p th:utext="${film.id}">id</p>
-        <p th:utext="${film.nameFilm}">nameFilm</p>
-        <p th:utext="${film.descriptionFilm}">descriptionFilm</p>
-        <p th:utext="${film.firstShowDate}">firstDate</p>
-        <p th:utext="${film.lastShowDate}">lastDate</p>
+    <div>
+        <th:block th:each="film : ${filmes}">
+        <p th:text="${film.id} + ' ' + ${film.nameFilm}">idNameFilm</p>
+        <p th:text="${film.descriptionFilm}">descriptionFilm</p>
+        <p th:text="'В наших кинотеатрах с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>
+        <p th:text="'Жанр: ' + ${film.tagFilm}">tagFilm</p>
+        </th:block>
     </div>
 </body>
 </html>
