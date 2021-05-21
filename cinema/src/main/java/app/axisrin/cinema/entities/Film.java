@@ -1,4 +1,4 @@
-package app.axisrin.cinema.Entities;
+package app.axisrin.cinema.entities;
 
 import lombok.Data;
 
