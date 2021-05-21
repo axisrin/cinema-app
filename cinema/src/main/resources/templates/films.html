@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Films in Cinema</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <input type="text" name="nameFilm" placeholder="Введите название фильма" />
+            <input type="text" name="descriptionFilm" placeholder="Введите Описание Фильма" />
+            <input type="date" name="firstDate" placeholder="Начало показа" />
+            <input type="date" name="lastDate" placeholder="Конец показа" />
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <br>
+    <div th:each="film : ${filmes}">
+        <p th:utext="${film.id}">id</p>
+        <p th:utext="${film.nameFilm}">nameFilm</p>
+        <p th:utext="${film.descriptionFilm}">descriptionFilm</p>
+        <p th:utext="${film.firstShowDate}">firstDate</p>
+        <p th:utext="${film.lastShowDate}">lastDate</p>
+    </div>
+</body>
+</html>

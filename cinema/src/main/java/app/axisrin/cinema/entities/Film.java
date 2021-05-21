@@ -2,10 +2,7 @@ package app.axisrin.cinema.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -16,10 +13,19 @@ public class Film {
     private Long id;
     private String nameFilm;
     private String descriptionFilm;
+    @Temporal(TemporalType.DATE)
     private Date firstShowDate;
+    @Temporal(TemporalType.DATE)
     private Date lastShowDate;
 
     public Film() {
+    }
+
+    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate) {
+        this.nameFilm = nameFilm;
+        this.descriptionFilm = descriptionFilm;
+        this.firstShowDate = firstShowDate;
+        this.lastShowDate = lastShowDate;
     }
 
     public Long getId() {
