@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="list1">
+    <div th:each="user : ${users}">
+        <p th:text="'Id Пользователя: ' + ${user.id} +
+            ' Имя пользователя: ' + ${user.username} +
+            ' Его телефон: ' + ${user.phone} +
+            ' Его почта: ' + ${user.email}">userInfo</p>
+    </div>
+</div>
+</html>

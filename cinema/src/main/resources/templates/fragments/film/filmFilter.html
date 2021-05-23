@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="filter1">
+    <form method="post" action="/filmes/filterGenre">
+        <input type="text" name="filterGenre" placeholder="Поиск по жанру">
+        <button type="submit">Найти</button>
+    </form>
+    <form method="post" action="/filmes/filterDate">
+        <input id="today" type="date" name="filterDate">
+        <script>
+            var today = new Date();
+            document.getElementById("today").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+        </script>
+        <button type="submit">Найти</button>
+    </form>
+    <a href="/filmes">Очистить фильтры</a>
+</div>
+
+</html>

@@ -16,16 +16,30 @@ public class Film {
     private Date firstShowDate;
     private Date lastShowDate;
     private String tagFilm;
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+    private String authorName;
+
     public Film() {
     }
 
-    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate, String tagFilm) {
+    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate, String tagFilm, User user) {
         this.nameFilm = nameFilm;
         this.descriptionFilm = descriptionFilm;
         this.firstShowDate = firstShowDate;
         this.lastShowDate = lastShowDate;
         this.tagFilm = tagFilm;
+        this.author = user;
+        this.authorName = user.getUsername();
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public Long getId() {

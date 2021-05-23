@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="add1">
+    <form method="post" action="/users">
+        <div><label>Телефон :<input type="tel" name="phone" placeholder="+7 (xxx) xxx-xx-xx"></label></div>
+        <div><label>Email :<input type="email" name="email" placeholder="example@example.com"></label></div>
+        <div th:if="${emailErrorMessage}">
+            Данный Email уже занят попробуйте другой.
+        </div>
+        <div><label>Никнейм :<input type="text" name="username" placeholder="Введите свой никнейм"></label></div>
+        <div><label>Активный ?<input type="radio" name="isActive"></label></div>
+        <div><label>Пароль :<input type="password" name="password" placeholder="Введите свой пароль"></label></div>
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+</html>

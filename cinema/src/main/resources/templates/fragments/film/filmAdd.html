@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="add1">
+    <div>
+        <form method="post" action="/filmes/">
+            <input type="text" name="nameFilm" placeholder="Введите название фильма" />
+            <input type="text" name="descriptionFilm" placeholder="Введите Описание Фильма" />
+            <input type="text" name="tagFilm" placeholder="Введите Жанр" />
+            <input type="date" name="firstDate" placeholder="Начало показа" />
+            <input type="date" name="lastDate" placeholder="Конец показа" />
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+</html>

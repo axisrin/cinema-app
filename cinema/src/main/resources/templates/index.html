@@ -5,12 +5,9 @@
     <title>Main Cinema</title>
 </head>
 <body>
+    <div th:replace="~{fragments/header :: header1}"></div>
     <h1 th:text="'Hello ' + ${#httpServletRequest.remoteUser}">Hello</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
+    <div th:replace="~{fragments/logoutfr :: logout1}"></div>
     <p th:text="'Hello, ' + ${name} + ', on the cinema app!'"></p>
-    <a th:href="@{/filmes}">Filmes.</a>
-    <a th:href="@{/users}">Users.</a>
 </body>
 </html>

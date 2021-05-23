@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="list1">
+    <th:block th:each="film : ${filmes}">
+        <p th:text="${film.id} + ' ' + ${film.nameFilm}">idNameFilm</p>
+        <p th:text="${film.descriptionFilm}">descriptionFilm</p>
+        <p th:text="'В наших кинотеатрах с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>
+        <p th:text="'Жанр: ' + ${film.tagFilm}">tagFilm</p>
+        <b th:text="'Автор добавления: ' + ${film.authorName}">addedAuthor</b>
+    </th:block>
+</div>
+</html>

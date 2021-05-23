@@ -5,34 +5,12 @@
     <title>Users page</title>
 </head>
 <body>
-    <a href="/">Home</a>
+    <div th:replace="~{fragments/header :: header1}"></div>
     <h3>Добавить Юзера</h3>
-    <div>
-        <form method="post" action="/users">
-            <div><label>Телефон :<input type="tel" name="phone" placeholder="+7 (xxx) xxx-xx-xx"></label></div>
-            <div><label>Email :<input type="email" name="email" placeholder="example@example.com"></label></div>
-            <div th:if="${emailErrorMessage}">
-                Данный Email уже занят попробуйте другой.
-            </div>
-            <div><label>Никнейм :<input type="text" name="username" placeholder="Введите свой никнейм"></label></div>
-            <div><label>Активный ?<input type="radio" name="isActive"></label></div>
-            <div><label>Пароль :<input type="password" name="password" placeholder="Введите свой пароль"></label></div>
-            <button type="submit">Добавить</button>
-        </form>
-    </div>
+    <div th:replace="~{fragments/users/userAdd :: add1}"></div>
     <h3>Поиск юзеров</h3>
-    <div>
-        <form method="post" action="/users/filterEmail">
-            <input type="email" name="filterEmail" placeholder="example@example.com">
-            <button type="submit">Найти</button>
-        </form>
-    </div>
-    <h3>Список Юхеров</h3>
-    <div th:each="user : ${users}">
-        <p th:text="'Id Пользователя: ' + ${user.id} +
-            ' Имя пользователя: ' + ${user.username} +
-            ' Его телефон: ' + ${user.phone} +
-            ' Его почта: ' + ${user.email}">userInfo</p>
-    </div>
+    <div th:replace="~{fragments/users/userFind :: find1}"></div>
+    <h3>Список Юзеров</h3>
+    <div th:replace="~{fragments/users/userList :: list1}"></div>
 </body>
 </html>

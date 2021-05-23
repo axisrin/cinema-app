@@ -1,8 +1,10 @@
 package app.axisrin.cinema.controllers;
 
 import app.axisrin.cinema.entities.Film;
+import app.axisrin.cinema.entities.User;
 import app.axisrin.cinema.repos.FilmRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,13 +27,14 @@ public class FilmController {
     }
 
     @PostMapping
-    public String addFilmes(@RequestParam String nameFilm,
+    public String addFilmes(@AuthenticationPrincipal User user,
+                            @RequestParam String nameFilm,
                             @RequestParam String descriptionFilm,
                             @RequestParam String tagFilm,
                             @RequestParam Date firstDate,
                             @RequestParam Date lastDate,
                             Model model) {
-        Film film = new Film(nameFilm, descriptionFilm, firstDate, lastDate, tagFilm);
+        Film film = new Film(nameFilm, descriptionFilm, firstDate, lastDate, tagFilm, user);
         filmRepo.save(film);
         List<Film> filmes = filmRepo.findAll();
         model.addAttribute("filmes",filmes);
