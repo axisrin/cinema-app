@@ -5,8 +5,10 @@
     <title>Films in Cinema</title>
 </head>
 <body>
+    <a href="/">Home</a>
+    <h3>Добавить фильм</h3>
     <div>
-        <form method="post">
+        <form method="post" action="/filmes/">
             <input type="text" name="nameFilm" placeholder="Введите название фильма" />
             <input type="text" name="descriptionFilm" placeholder="Введите Описание Фильма" />
             <input type="text" name="tagFilm" placeholder="Введите Жанр" />
@@ -15,7 +17,24 @@
             <button type="submit">Добавить</button>
         </form>
     </div>
+    <h3>Фильтры</h3>
+    <div>
+        <form method="post" action="/filmes/filterGenre">
+            <input type="text" name="filterGenre" placeholder="Поиск по жанру">
+            <button type="submit">Найти</button>
+        </form>
+        <form method="post" action="/filmes/filterDate">
+            <input id="today" type="date" name="filterDate">
+            <script>
+                var today = new Date();
+                document.getElementById("today").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+            </script>
+            <button type="submit">Найти</button>
+        </form>
+        <a href="/filmes">Очистить фильтры</a>
+    </div>
     <br>
+    <h3>Фильмы сегодня</h3>
     <div>
         <th:block th:each="film : ${filmes}">
         <p th:text="${film.id} + ' ' + ${film.nameFilm}">idNameFilm</p>

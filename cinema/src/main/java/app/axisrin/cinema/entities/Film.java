@@ -16,7 +16,7 @@ public class Film {
     private Date firstShowDate;
     private Date lastShowDate;
     private String tagFilm;
-
+    
     public Film() {
     }
 

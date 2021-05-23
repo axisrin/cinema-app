@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<div>
+    <h3>Add new user</h3>
+</div>
+<div th:if="${message}">
+    <p th:text="${message}">User exists!</p>
+</div>
+<form th:action="@{/registration}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Email : <input type="email" name="email"/> </label></div>
+    <div th:if="${emailErrorMessage}">
+        Данный Email уже занят попробуйте другой.
+    </div>
+    <div><label> Phone : <input type="tel" name="phone"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+</body>
+</html>

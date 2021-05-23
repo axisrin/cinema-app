@@ -3,13 +3,9 @@ package app.axisrin.cinema.controllers;
 import app.axisrin.cinema.entities.Film;
 import app.axisrin.cinema.repos.FilmRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.util.List;
@@ -42,4 +38,32 @@ public class FilmController {
         return "films";
     }
 
+    @PostMapping("/filterGenre")
+    public String filter(@RequestParam String filterGenre,
+                         Model model) {
+        List<Film> filmes;
+        if (filterGenre != null && !filterGenre.isEmpty()) {
+            filmes = filmRepo.findByTagFilm(filterGenre);
+        } else {
+            filmes = filmRepo.findAll();
+        }
+        System.out.println("meth filterGenre lims finded is + " + filmes.toString());
+        model.addAttribute("filmes", filmes);
+        return "films";
+    }
+
+    @PostMapping("filterDate")
+    public String filter(@RequestParam Date filterDate,
+                         Model model) {
+        List<Film> filmes;
+        if (filterDate != null) {
+            filmes = filmRepo
+                    .findByFirstShowDateLessThanEqualAndLastShowDateGreaterThanEqual(filterDate,filterDate);
+        } else {
+            filmes = filmRepo.findAll();
+        }
+        System.out.println("meth filterDate lims finded is + " + filmes.toString());
+        model.addAttribute("filmes", filmes);
+        return "films";
+    }
 }

@@ -5,6 +5,12 @@
     <title>Main Cinema</title>
 </head>
 <body>
-    <p th:text="'Hello, ' + ${name} + ', on the cinema app!'" />
+    <h1 th:text="'Hello ' + ${#httpServletRequest.remoteUser}">Hello</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    <p th:text="'Hello, ' + ${name} + ', on the cinema app!'"></p>
+    <a th:href="@{/filmes}">Filmes.</a>
+    <a th:href="@{/users}">Users.</a>
 </body>
 </html>

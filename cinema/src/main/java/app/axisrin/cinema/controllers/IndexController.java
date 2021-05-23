@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
 
     @GetMapping("/")
-    public String index(@RequestParam(required = false, defaultValue = "new user") String name, Model model) {
-        model.addAttribute("name", name);
-        System.out.println("Programm on the index page name= " + name);
+    public String index(Model model) {
         return "index";
     }
 
