@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div style="margin-bottom: 2%" th:fragment="edit1">
+        <form th:action="@{'/users/edit/' + ${user.id}}" th:method="post">
+            <div th:if="${message}">
+                <h5 th:text="${message}"></h5>
+            </div>
+            <div>
+                <label for="usr">Имя пользователя :</label>
+                <input type="text" class="form-control" id="usr" th:value="${user.username}" name="username">
+            </div>
+            <div>
+                <label for="newPassword">Новый пароль :</label>
+                <input type="password"  class="form-control" id="newPassword" th:name="newPassword">
+            </div>
+            <div>
+                <label for="eml">Email :</label>
+                <input type="text" class="form-control" id="eml" th:value="${user.email}" name="email">
+            </div>
+            <div>
+                <label for="tel">Телефон :</label>
+                <input type="tel" class="form-control" id="tel" th:value="${user.phone}" name="phone">
+            </div>
+            <div th:each="role : ${roles}">
+                <label th:for="${role}" th:text="${role}"></label>
+                <input type="checkbox" th:checked="${#lists.contains(user.roles, role)}" th:name="${role}">
+            </div>
+            <input type="hidden" th:value="${user.id}" th:name="UserId">
+            <div>
+                <label for="oldPassword">Введите старый пароль для подтверждения :</label>
+                <input required="true" type="password" id="oldPassword" th:name="oldPassword">
+            </div>
+            <button class="btn" style="background-color: #D9D4BA;" type="submit">Сохранить</button>
+        </form>
+    </div>
+</html>

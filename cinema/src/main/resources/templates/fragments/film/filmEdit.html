@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<div style="margin-bottom: 2%" th:fragment="edit1">
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="card col" style="width: 18rem; background-color: transparent; border: 0px transparent">
+            <div th:if="${film.filename}">
+                <img class="card-img-top" style="border-top-left-radius: 10px; border-top-right-radius: 10px" th:src="@{/img/{filename}(filename=${film.filename})}" alt="img">
+            </div>
+            <div class="card-body" style="background-color: #8C0D24; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px">
+                <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="${film.nameFilm}"></h5>
+                <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'Описание фильма: ' + ${film.descriptionFilm}">descriptionFilm</p>
+                <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'Жанр: ' + ${film.tagFilm}">tagFilm</p>
+                <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'Название фильма: ' + ${film.nameFilm}">idNameFilm</p>
+                <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'Место проведения: ' + ${film.placeFilm}">idNameFilm</p>
+                <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'В показе с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>
+
+                <p class="card-text"  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="'Стоимость: ' + ${film.costFilm}+ ' рублей'">tagFilm</p>
+<!--                <a class="btn filmFilter__form"-->
+<!--                   onmouseover="this.style.backgroundColor='#8C0D24';this.style.color='#D9D4BA';"-->
+<!--                   onmouseout="this.style.backgroundColor='#D9D4BA';this.style.color='#111226';"-->
+<!--                   style="transition: 500ms ;transition-timing-function: ease-in-out; border: 1px solid #D9D4BA; border-radius: 5px; background-color: #D9D4BA; width: 100%" th:text="'Подробнее для покупки'"></a>-->
+<!--                <a sec:authorize="hasAuthority('ADMIN')" class="btn filmFilter__form"-->
+<!--                   style="transition: 500ms ;transition-timing-function: ease-in-out ;border: 1px solid #D9D4BA; border-radius: 5px; color: #D9D4BA; background: transparent; width: 100%"-->
+<!--                   onmouseover="this.style.backgroundColor='#D9D4BA';this.style.color='#111226';"-->
+<!--                   onmouseout="this.style.backgroundColor='transparent';this.style.color='#D9D4BA';" s th:href="'/filmes/edit/' + ${film.id}">Редактировать Анкету</a>-->
+            </div>
+            <!--        <b th:text="'Автор добавления: ' + ${film.authorName} + ' Телефон автора: ' + ${film.authorTel}">addedAuthor</b>-->
+        </div>
+        <form class="col" th:action="@{'/filmes/edit/' + ${film.id}}" th:method="post" enctype="multipart/form-data">
+            <div><label class="form-label" for="t1">Название фильма: </label><input id="t1" type="text" th:value="${film.nameFilm}" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /> </div>
+            <div><label class="form-label" for="t2">Место проведения кинопоказа: </label> <input id="t2" th:value="${film.placeFilm}" type="text" name="placeFilm" class="form-control filmFilter__form" placeholder="Введите Место" /></div>
+            <div><label class="form-label" for="t3">Описание фильма: </label><input type="text" id="t3" th:value="${film.descriptionFilm}" name="descriptionFilm" class="form-control filmFilter__form" placeholder="Введите Описание Фильма" /> </div>
+            <div><label class="form-label" for="t4">Жанр: </label><input type="text" id="t4" th:value="${film.tagFilm}" name="tagFilm" class="form-control filmFilter__form" placeholder="Введите Жанр" /> </div>
+            <div><label class="form-label" for="t5">Стоимость показа (руб.): </label><input id="t5" type="number" th:value="${film.costFilm}" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /> </div>
+            <div>
+                <label class="form-label" for="t6">Дата начала показа: </label>
+                    <input type="date" id="t6" th:value="${film.firstShowDate}" name="firstDate" class="form-control filmFilter__form" placeholder="Начало показа" />
+            </div>
+            <div>
+                <label class="form-label" for="t7">Дата завершения показа:</label>
+                    <input type="date" name="lastDate" id="t7" th:value="${film.lastShowDate}" class="form-control filmFilter__form" placeholder="Конец показа" />
+            </div>
+            <div>
+                <label class="form-label" for="t8">Обложка для фильма:</label>
+                <br>
+                <input type="file" class="filmFilter__form" id="t8" name="file">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn " style="background-color: #D9D4BA;" type="submit">Сохранить</button>
+            </div>
+            <input type="hidden" th:value="${film.id}" name="FilmId"/>
+        </form>
+    </div>
+</div>
+</html>
