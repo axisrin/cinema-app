@@ -1,17 +1,20 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="add1">
-    <form method="post" action="/users">
-        <div><label>Телефон :<input type="tel" name="phone" placeholder="+7 (xxx) xxx-xx-xx"></label></div>
-        <div><label>Email :<input type="email" name="email" placeholder="example@example.com"></label></div>
+<div style="margin-bottom: 2%" th:fragment="add1">
+    <a class="btn" style="background-color: #D9D4BA;" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Добавить юзера
+    </a>
+    <form method="post" class="collapse" id="collapseExample2" action="/users">
         <div th:if="${emailErrorMessage}">
-            Данный Email уже занят попробуйте другой.
+            <p th:text="${emailErrorMessage}">
         </div>
-        <div><label>Никнейм :<input type="text" name="username" placeholder="Введите свой никнейм"></label></div>
-        <div><label>Активный ?<input type="radio" name="isActive"></label></div>
-        <div><label>Пароль :<input type="password" name="password" placeholder="Введите свой пароль"></label></div>
-        <button type="submit">Добавить</button>
+        <div class="registration__field"><label>Телефон :<input type="tel" name="phone" class="form-control" placeholder="+7 (xxx) xxx-xx-xx"></label></div>
+        <div class="registration__field"><label>Email :<input type="email" name="email" class="form-control" placeholder="example@example.com"></label></div>
+        <div class="registration__field"><label>Никнейм :<input type="text" name="username" class="form-control" placeholder="Введите свой никнейм"></label></div>
+        <div class="registration__field"><label>Активный ?<input type="radio" name="isActive"></label></div>
+        <div class="registration__field"><label>Пароль :<input type="password" class="form-control" name="password" placeholder="Введите свой пароль"></label></div>
+        <button class="btn" style="background-color: #D9D4BA;" type="submit">Добавить</button>
     </form>
 </div>
 </html>

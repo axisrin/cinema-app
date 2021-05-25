@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div style="margin-bottom: 2%" th:fragment="info1">
+    <div th:each="user : ${users}">
+        <th:block th:if="${user.username} == ${#httpServletRequest.remoteUser}">
+            <b>Your username:</b><p th:text="${user.username}"></p>
+            <b>Your email:</b><p th:text="${user.email}"></p>
+            <b>Your telephone:</b><p th:text="${user.phone}"></p>
+        </th:block>
+    </div>
+</div>
+</html>

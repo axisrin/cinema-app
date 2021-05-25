@@ -1,12 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="list1">
-    <div th:each="user : ${users}">
-        <p th:text="'Id Пользователя: ' + ${user.id} +
-            ' Имя пользователя: ' + ${user.username} +
-            ' Его телефон: ' + ${user.phone} +
-            ' Его почта: ' + ${user.email}">userInfo</p>
+<div style="margin-bottom: 2%" th:fragment="list1">
+    <div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Edit link</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">
+                <td th:text="${user.username}">
+                <td th:text="${user.phone}">
+                <td th:text="${user.email}">
+                <td th:text="${user.roles}">
+                <td><a th:href="'/users/edit/' + ${user.id}">Редактировать пользователя</a></td>
+            </tr>
+        </table>
     </div>
 </div>
 </html>

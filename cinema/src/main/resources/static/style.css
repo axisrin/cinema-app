@@ -1,0 +1,46 @@
+body {
+    background-color: #111226;
+    color: #D9D4BA;
+}
+
+a {
+    color: #D9D4BA;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    transition: 0.7s;
+}
+
+a:checked {
+    color: #D9D4BA;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    transition: 0.7s;
+}
+
+a:hover {
+    color: #8C0D24;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    transition: 0.7s;
+}
+
+a:active {
+    color: #D90416;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    transition: 0.7s;
+}
+
+a.header__link {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.registration__field {
+    margin-bottom: 1%;
+}
+
+.filmFilter__form {
+    margin-bottom: 1%;
+    margin-top: 1%;
+}

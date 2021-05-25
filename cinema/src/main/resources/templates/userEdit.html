@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Users page</title>
+    <title>Change User info</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/style.css">
@@ -10,12 +10,8 @@
 <body>
     <div class="container">
         <div th:replace="~{fragments/header :: header1}"></div>
-        <h3>Добавить Юзера</h3>
-        <div th:replace="~{fragments/users/userAdd :: add1}"></div>
-        <h3>Поиск юзеров</h3>
-        <div th:replace="~{fragments/users/userFind :: find1}"></div>
-        <h3>Список Юзеров</h3>
-        <div th:replace="~{fragments/users/userList :: list1}"></div>
+        <h3>Изменить Юзера</h3>
+        <div th:replace="~{fragments/users/userEdit :: edit1}"></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </div>
 </body>

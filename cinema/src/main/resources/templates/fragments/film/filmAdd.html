@@ -1,15 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="add1">
+<div style="margin-bottom: 2%" th:fragment="add1">
     <div>
-        <form method="post" action="/filmes/">
-            <input type="text" name="nameFilm" placeholder="Введите название фильма" />
-            <input type="text" name="descriptionFilm" placeholder="Введите Описание Фильма" />
-            <input type="text" name="tagFilm" placeholder="Введите Жанр" />
-            <input type="date" name="firstDate" placeholder="Начало показа" />
-            <input type="date" name="lastDate" placeholder="Конец показа" />
-            <button type="submit">Добавить</button>
+        <a class="btn" style="background-color: #D9D4BA;" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Добавить фильм
+        </a>
+        <form method="post" class="collapse" id="collapseExample1" action="/filmes/" enctype="multipart/form-data">
+            <div><label>Название фильма: <input type="text" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /></label> </div>
+            <div><label>Место проведения кинопоказа: <input type="text" name="placeFilm" class="form-control filmFilter__form" placeholder="Введите Место" /></label> </div>
+            <div><label>Описание фильма: <input type="text" name="descriptionFilm" class="form-control filmFilter__form" placeholder="Введите Описание Фильма" /></label> </div>
+            <div><label>Жанр: <input type="text" name="tagFilm" class="form-control filmFilter__form" placeholder="Введите Жанр" /></label> </div>
+            <div><label>Стоимость показа (руб.): <input type="number" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /></label> </div>
+            <div>
+                <label>Дата начала показа:
+                <input type="date" name="firstDate" class="form-control filmFilter__form" placeholder="Начало показа" /></label>
+            </div>
+            <div>
+                <label>Дата завершения показа:
+                <input type="date" name="lastDate" class="form-control filmFilter__form" placeholder="Конец показа" /></label>
+            </div>
+            <div>
+                <label>Обложка для фильма:</label>
+                <br>
+                <input type="file" class="filmFilter__form" name="file">
+            </div>
+            <button class="btn" style="background-color: #D9D4BA;" type="submit">Добавить</button>
         </form>
     </div>
 </div>

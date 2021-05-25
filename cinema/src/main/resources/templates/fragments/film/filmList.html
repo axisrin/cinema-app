@@ -1,13 +1,33 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
-<div th:fragment="list1">
-    <th:block th:each="film : ${filmes}">
-        <p th:text="${film.id} + ' ' + ${film.nameFilm}">idNameFilm</p>
-        <p th:text="${film.descriptionFilm}">descriptionFilm</p>
-        <p th:text="'В наших кинотеатрах с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>
-        <p th:text="'Жанр: ' + ${film.tagFilm}">tagFilm</p>
-        <b th:text="'Автор добавления: ' + ${film.authorName}">addedAuthor</b>
-    </th:block>
+<div style="margin-bottom: 2%" th:fragment="list1">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4">
+        <div th:each="film : ${filmes}" class="col">
+            <div class="card" style="width: 18rem; background-color: transparent;">
+                <div th:if="${film.filename}">
+                    <img sec:authorize="hasAnyAuthority('ADMIN','USER')" class="card-img-top" style="border-top-left-radius: 10px; border-top-right-radius: 10px" th:src="@{/img/{filename}(filename=${film.filename})}" alt="img">
+                </div>
+                <div class="card-body" style="background-color: #8C0D24; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"><h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="${film.nameFilm}"></h5>
+                    <p class="card-text" style="margin-bottom: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="'Жанр: ' + ${film.tagFilm}">tagFilm</p>
+            <!--        <p th:text="'Название фильма: ' + ${film.nameFilm}">idNameFilm</p>-->
+            <!--        <p th:text="'Место проведения: ' + ${film.placeFilm}">idNameFilm</p>-->
+        <!--            <p class="card-text" th:text="'Описание фильма: ' + ${film.descriptionFilm}">descriptionFilm</p>-->
+        <!--            <p class="card-text" th:text="'В показе с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>-->
+
+                    <p class="card-text"  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="'Стоимость: ' + ${film.costFilm}+ ' рублей'">tagFilm</p>
+                    <a sec:authorize="hasAnyAuthority('ADMIN','USER')" class="btn filmFilter__form"
+                       onmouseover="this.style.backgroundColor='#8C0D24';this.style.color='#D9D4BA';"
+                       onmouseout="this.style.backgroundColor='#D9D4BA';this.style.color='#111226';"
+                       style="transition: 500ms ;transition-timing-function: ease-in-out; border: 1px solid #D9D4BA; border-radius: 5px; background-color: #D9D4BA; width: 100%" th:href="'/filmes/buy/' + ${film.id}" th:text="'Подробнее для покупки'"></a>
+                    <a sec:authorize="hasAuthority('ADMIN')" class="btn filmFilter__form"
+                       style="transition: 500ms ;transition-timing-function: ease-in-out ;border: 1px solid #D9D4BA; border-radius: 5px; color: #D9D4BA; background: transparent; width: 100%"
+                       onmouseover="this.style.backgroundColor='#D9D4BA';this.style.color='#111226';"
+                       onmouseout="this.style.backgroundColor='transparent';this.style.color='#D9D4BA';" s th:href="'/filmes/edit/' + ${film.id}">Редактировать Анкету</a>
+                </div>
+                <!--        <b th:text="'Автор добавления: ' + ${film.authorName} + ' Телефон автора: ' + ${film.authorTel}">addedAuthor</b>-->
+            </div>
+        </div>
+    </div>
 </div>
 </html>
