@@ -6,19 +6,23 @@
         <a class="btn" style="background-color: #D9D4BA;" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
             Добавить фильм
         </a>
+        <th:block th:if="${errorMesg}">
+            <b th:text="${errorMesg}"></b>
+        </th:block>
         <form method="post" class="collapse" id="collapseExample1" action="/filmes/" enctype="multipart/form-data">
-            <div><label>Название фильма: <input type="text" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /></label> </div>
-            <div><label>Место проведения кинопоказа: <input type="text" name="placeFilm" class="form-control filmFilter__form" placeholder="Введите Место" /></label> </div>
-            <div><label>Описание фильма: <input type="text" name="descriptionFilm" class="form-control filmFilter__form" placeholder="Введите Описание Фильма" /></label> </div>
-            <div><label>Жанр: <input type="text" name="tagFilm" class="form-control filmFilter__form" placeholder="Введите Жанр" /></label> </div>
-            <div><label>Стоимость показа (руб.): <input type="number" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /></label> </div>
+            <div><label>Название фильма: <input type="text" required="true" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /></label> </div>
+            <div><label>Место проведения кинопоказа: <input type="text" required="true" name="placeFilm" class="form-control filmFilter__form" placeholder="Введите Место" /></label> </div>
+            <div><label>Описание фильма: <input type="text" required="true" name="descriptionFilm" class="form-control filmFilter__form" placeholder="Введите Описание Фильма" /></label> </div>
+            <div><label>Введите количество свободных мест: <input type="number" required="true" name="freePlaces" class="form-control filmFilter__form" placeholder="Количество свободных мест" /></label> </div>
+            <div><label>Жанр: <input type="text" name="tagFilm" required="true" class="form-control filmFilter__form" placeholder="Введите Жанр" /></label> </div>
+            <div><label>Стоимость билета (руб.): <input type="number" required="true" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /></label> </div>
             <div>
                 <label>Дата начала показа:
-                <input type="date" name="firstDate" class="form-control filmFilter__form" placeholder="Начало показа" /></label>
+                <input type="date" name="firstDate" required="true" class="form-control filmFilter__form" placeholder="Начало показа" /></label>
             </div>
             <div>
                 <label>Дата завершения показа:
-                <input type="date" name="lastDate" class="form-control filmFilter__form" placeholder="Конец показа" /></label>
+                <input type="date" name="lastDate" required="true" class="form-control filmFilter__form" placeholder="Конец показа" /></label>
             </div>
             <div>
                 <label>Обложка для фильма:</label>

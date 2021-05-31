@@ -24,8 +24,27 @@ public class Film {
     private String placeFilm;
     private String authorTel;
     private int costFilm;
+    private int freePlaces;
+    private int boughtPlaces = 0;
+    private int currentPlaces = this.freePlaces - this.boughtPlaces;
 
     public Film() {
+    }
+
+    public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate, String tagFilm, User author, String authorName, String filename, String placeFilm, String authorTel, int costFilm, int freePlaces, int boughtPlaces) {
+        this.nameFilm = nameFilm;
+        this.descriptionFilm = descriptionFilm;
+        this.firstShowDate = firstShowDate;
+        this.lastShowDate = lastShowDate;
+        this.tagFilm = tagFilm;
+        this.author = author;
+        this.authorName = authorName;
+        this.filename = filename;
+        this.placeFilm = placeFilm;
+        this.authorTel = authorTel;
+        this.costFilm = costFilm;
+        this.freePlaces = freePlaces;
+        this.boughtPlaces = boughtPlaces;
     }
 
     public Film(String nameFilm, String descriptionFilm, Date firstDate, Date lastDate, String tagFilm, User user, String placeFilm, int costFilm) {
@@ -53,6 +72,7 @@ public class Film {
         this.placeFilm = placeFilm;
     }
 
+
     public Film(String nameFilm, String descriptionFilm, Date firstShowDate, Date lastShowDate, String tagFilm, User user) {
         this.nameFilm = nameFilm;
         this.descriptionFilm = descriptionFilm;
@@ -61,6 +81,30 @@ public class Film {
         this.tagFilm = tagFilm;
         this.author = user;
         this.authorName = user.getUsername();
+    }
+
+    public int getCurrentPlaces() {
+        return currentPlaces;
+    }
+
+    public void setCurrentPlaces(int currentPlaces) {
+        this.currentPlaces = currentPlaces;
+    }
+
+    public int getFreePlaces() {
+        return this.freePlaces - this.boughtPlaces;
+    }
+
+    public void setFreePlaces(int freePlaces) {
+        this.freePlaces = freePlaces;
+    }
+
+    public int getBoughtPlaces() {
+        return boughtPlaces;
+    }
+
+    public void setBoughtPlaces(int boughtPlaces) {
+        this.boughtPlaces = boughtPlaces;
     }
 
     public String getPlaceFilm() {

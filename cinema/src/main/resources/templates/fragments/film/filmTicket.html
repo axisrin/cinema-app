@@ -15,6 +15,9 @@
                 <p class="card-text" style="margin-bottom: 2%; overflow: hidden; text-overflow: ellipsis;" th:text="'В показе с ' + ${film.firstShowDate} + ' по ' + ${film.lastShowDate}">firstLastDate</p>
 
                 <p class="card-text"  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="'Стоимость: ' + ${film.costFilm}+ ' рублей'">tagFilm</p>
+                <th:block th:with="result=${film.freePlaces}">
+                    <b class="card-text"  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" th:text="'Свободных мест: ' + ${result}+ ' осталось'">tagFilm</b>
+                </th:block>
                 <!--                <a class="btn filmFilter__form"-->
                 <!--                   onmouseover="this.style.backgroundColor='#8C0D24';this.style.color='#D9D4BA';"-->
                 <!--                   onmouseout="this.style.backgroundColor='#D9D4BA';this.style.color='#111226';"-->
@@ -26,20 +29,44 @@
             </div>
             <!--        <b th:text="'Автор добавления: ' + ${film.authorName} + ' Телефон автора: ' + ${film.authorTel}">addedAuthor</b>-->
         </div>
-        <form class="col" th:action="@{'/filmes/edit/' + ${film.id}}" th:method="post" enctype="multipart/form-data">
+        <form class="col" th:action="@{'/filmes/buy/' + ${film.id}}" th:method="post" enctype="multipart/form-data">
             <th:block th:each="user : ${users}">
                 <th:block th:if="${user.username} == ${#httpServletRequest.remoteUser}">
-                <div><label class="form-label" for="t1">Ваше ФИО (по желанию только Имя): </label><input required="true" id="t1" type="text" th:value="${user.username}" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /> </div>
-                <div><label class="form-label" for="t5">Кол-во билетов: </label><input id="t5" type="number" required="true" th:value="1" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /> </div>
-                <div>
-                    <label class="form-label" for="t6">Дата показа: </label>
-                    <input type="date" id="t6" th:value="${film.firstShowDate}" name="firstDate" required="true" class="form-control filmFilter__form" placeholder="Начало показа" />
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button class="btn " style="background-color: #D9D4BA;" type="submit">Сделать заказ</button>
-                </div>
-                <input type="hidden" th:value="${film.id}" name="FilmId"/>
-                </th:block>
+                    <div th:if="${resultMessage}">
+                        <p th:text="${resultMessage}"></p>
+                    </div>
+                    <div><label class="form-label" for="t1">Ваше ФИО (по желанию только Имя): </label><input required="true" id="t1" type="text" th:value="${user.username}" name="nameUser" class="form-control filmFilter__form" placeholder="Введите название фильма" /> </div>
+                    <div><label class="form-label" for="t5">Кол-во билетов: </label><input id="t5" type="number" required="true" th:value="1" th:name="totalTickets" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /> </div>
+                    <p>Общая стоимость билетов: <label id="totCo"></label></p>
+                    <input type="hidden" th:value="${film.costFilm}" id="cosFi"/>
+
+                    <script>
+                        var totalTick = document.getElementById("t5");
+                        var totalLab = document.getElementById("totCo");
+                        var costFi = document.getElementById("cosFi").getAttribute("value");
+                        totalLab.innerHTML = costFi;
+
+                        totalTick.addEventListener("change", function () {
+                        var costFilm = document.getElementById("cosFi").getAttribute("value");
+                        // alert(costFilm);
+                        var totalTickets = document.getElementById("t5").value;
+                        // alert(totalTickets);
+                        var totalLabel = document.getElementById("totCo");
+
+                        if (totalTickets >= 0) {
+                            totalLabel.innerHTML = costFilm*totalTickets;
+                        }});
+                    </script>
+
+                    <div>
+                        <label class="form-label" for="t6">Дата показа: </label>
+                        <input type="date" id="t6" th:value="${film.firstShowDate}" name="orderDate" required="true" class="form-control filmFilter__form" placeholder="Начало показа" />
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn " style="background-color: #D9D4BA;" type="submit">Сделать заказ</button>
+                    </div>
+                    <input type="hidden" th:value="${film.id}" name="FilmId"/>
+                    </th:block>
             </th:block>
         </form>
     </div>

@@ -8,7 +8,7 @@
         <a class="header__link" th:href="@{/filmes}">FILMES</a>
         <a class="header__link" sec:authorize ="hasAuthority('ADMIN')" th:href="@{/users}">USERS</a>
         <th:block th:if="${#httpServletRequest.remoteUser}">
-        <a class="header__link" th:text="${#httpServletRequest.remoteUser}"></a>
+            <a class="header__link" th:href="'/users/edit/profile/' + ${#httpServletRequest.remoteUser}" th:text="${#httpServletRequest.remoteUser}"></a>
         </th:block>
         <th:block th:if="!${#httpServletRequest.remoteUser}">
             <a class="header__link" th:text="LOGIN" th:href="@{/login}"></a>
