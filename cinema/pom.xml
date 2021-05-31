@@ -52,6 +52,14 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
@@ -72,6 +80,10 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.24</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-jdbc</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -87,6 +99,11 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>5.1.4</version>
             </plugin>
         </plugins>
     </build>

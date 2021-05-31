@@ -27,9 +27,13 @@
             <!--        <b th:text="'Автор добавления: ' + ${film.authorName} + ' Телефон автора: ' + ${film.authorTel}">addedAuthor</b>-->
         </div>
         <form class="col" th:action="@{'/filmes/edit/' + ${film.id}}" th:method="post" enctype="multipart/form-data">
+            <th:block th:if="${errorMesg}">
+                <b th:text="${errorMesg}"></b>
+            </th:block>
             <div><label class="form-label" for="t1">Название фильма: </label><input id="t1" type="text" th:value="${film.nameFilm}" name="nameFilm" class="form-control filmFilter__form" placeholder="Введите название фильма" /> </div>
             <div><label class="form-label" for="t2">Место проведения кинопоказа: </label> <input id="t2" th:value="${film.placeFilm}" type="text" name="placeFilm" class="form-control filmFilter__form" placeholder="Введите Место" /></div>
             <div><label class="form-label" for="t3">Описание фильма: </label><input type="text" id="t3" th:value="${film.descriptionFilm}" name="descriptionFilm" class="form-control filmFilter__form" placeholder="Введите Описание Фильма" /> </div>
+            <div><label class="form-label" for="t9">Введите количество свободных мест: </label><input type="number"  id="t9" required="true" th:value="${film.freePlaces}" name="freePlaces" class="form-control filmFilter__form" placeholder="Количество свободных мест" /> </div>
             <div><label class="form-label" for="t4">Жанр: </label><input type="text" id="t4" th:value="${film.tagFilm}" name="tagFilm" class="form-control filmFilter__form" placeholder="Введите Жанр" /> </div>
             <div><label class="form-label" for="t5">Стоимость показа (руб.): </label><input id="t5" type="number" th:value="${film.costFilm}" name="costFilm" class="form-control filmFilter__form" placeholder="Введите Cтоимость" /> </div>
             <div>
@@ -47,6 +51,9 @@
             </div>
             <div class="d-flex justify-content-end">
                 <button class="btn " style="background-color: #D9D4BA;" type="submit">Сохранить</button>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <a class="btn" th:href="@{'/filmes/edit/delete/' + ${film.id}}" style="background-color: #D9D4BA;" type="submit">Удалить</a>
             </div>
             <input type="hidden" th:value="${film.id}" name="FilmId"/>
         </form>

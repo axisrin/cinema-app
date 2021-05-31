@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -19,6 +20,7 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private boolean active;
+    private String activateCode;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
@@ -120,5 +122,13 @@ public class User implements UserDetails {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getActivateCode() {
+        return activateCode;
+    }
+
+    public void setActivateCode(String activateCode) {
+        this.activateCode = activateCode;
     }
 }

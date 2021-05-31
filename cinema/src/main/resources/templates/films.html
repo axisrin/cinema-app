@@ -14,6 +14,9 @@
         <div sec:authorize ="hasAuthority('ADMIN')" th:replace="~{fragments/film/filmAdd :: add1}"></div>
         <h3>Фильтры</h3>
         <div th:replace="~{fragments/film/filmFilter :: filter1}"></div>
+        <th:block sec:authorize ="hasAuthority('ADMIN')" th:if="${messageDeletedFilm}">
+            <b sec:authorize ="hasAuthority('ADMIN')" th:text="${messageDeletedFilm}"></b>
+        </th:block>
         <h3>Фильмы</h3>
         <div th:replace="~{fragments/film/filmList :: list1}"></div>
     </div>
