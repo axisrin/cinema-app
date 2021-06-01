@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div style="margin-bottom: 2%" th:fragment="edit1">
+        <form th:action="@{'/users/edit/' + ${user.id}}" th:method="post">
+            <div th:if="${message}">
+                <h5 th:text="${message}"></h5>
+            </div>
+            <div>
+                <label for="usr">Имя пользователя :</label>
+                <input type="text" class="form-control" id="usr" th:value="${user.username}" name="username">
+            </div>
+            <div>
+                <label for="newPassword">Новый пароль :</label>
+                <input type="password"  class="form-control" id="newPassword" th:name="newPassword">
+            </div>
+            <div>
+                <label for="eml">Email :</label>
+                <input type="text" class="form-control" id="eml" th:value="${user.email}" name="email">
+            </div>
+            <div>
+                <label for="tel">Телефон :</label>
+                <input type="tel" class="form-control" id="tel" th:value="${user.phone}" name="phone">
+            </div>
+            <div th:each="role : ${roles}">
+                <label th:for="${role}" th:text="${role}"></label>
+                <input type="checkbox" th:checked="${#lists.contains(user.roles, role)}" th:name="${role}">
+            </div>
+            <input type="hidden" th:value="${user.id}" th:name="UserId">
+            <div>
+                <label for="oldPassword">Введите старый пароль для подтверждения :</label>
+                <input style="margin-bottom: 5px" required="true" class="form-control" type="password" id="oldPassword" th:name="oldPassword">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn" style="background-color: #D9D4BA;" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div>
+
+    <div style="margin-bottom: 2%" th:fragment="edit2">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col" th:if="${user.username} == ${#httpServletRequest.remoteUser}">
+                <b>Your username:</b><p th:text="${user.username}"></p>
+                <b>Your email:</b><p th:text="${user.email}"></p>
+                <b>Your telephone:</b><p th:text="${user.phone}"></p>
+            </div>
+            <div class="col">
+                <br>
+            </div>
+            <div>
+                <div class="d-flex justify-content-end align-middle">
+                    <div style="color: #D90416; margin-right: 5px; margin-top: 7px" th:if="${message}">
+                        <b style="alignment-baseline: bottom" th:text="${message}"></b>
+                    </div>
+                    <a class="btn" style="background-color: #D9D4BA;" data-bs-toggle="collapse" href="#f1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Изменить данные
+                    </a>
+                </div>
+                <form class="collapse" id="f1" th:action="@{'/users/edit/profile/' + ${user.id}}" th:method="post">
+                    <div>
+                        <label for="usr">Имя пользователя :</label>
+                        <input type="text" class="form-control" id="usr" th:value="${user.username}" name="username">
+                    </div>
+                    <div>
+                        <label for="newPassword">Новый пароль :</label>
+                        <input type="password"  class="form-control" name="newPassword">
+                    </div>
+                    <div>
+                        <label for="tel">Телефон :</label>
+                        <input type="tel" class="form-control" th:value="${user.phone}" name="phone">
+                    </div>
+                    <input type="hidden" th:value="${user.id}" name="UserId">
+                    <div>
+                        <label for="oldPassword">Введите старый пароль для подтверждения :</label>
+                        <input style="margin-bottom: 5px" required="true" class="form-control" type="password"  name="oldPassword">
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn" style="background-color: #D9D4BA;" type="submit">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</html>
