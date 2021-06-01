@@ -23,14 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d92e08-edbe-45a9-88ca-8b51ae25e561" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/Cinema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/Cinema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/FilmSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/FilmSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__Init_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__Init_DB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +185,7 @@
       <workItem from="1622494858768" duration="3920000" />
       <workItem from="1622498809889" duration="892000" />
       <workItem from="1622499974506" duration="5640000" />
-      <workItem from="1622533406537" duration="6023000" />
+      <workItem from="1622533406537" duration="6627000" />
     </task>
     <servers />
   </component>
