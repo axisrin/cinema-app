@@ -3,7 +3,7 @@
 В дальнейшем репозиторий будет заполнен всякими всякими
 -
 ***Анализ области доступен [по ссылке](https://drive.google.com/file/d/1Ih3VmZfzoVoClDq3GCPcgYcADskP_aYx/view?usp=sharing)***
-
-**Пожалуйста ожидайте дальнейшего пополнения**
+-
+**Приложение можно протестировать [по ссылке](https://low-film.herokuapp.com)**
 
 @axisrin
