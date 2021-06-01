@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div style="margin-bottom: 2%" th:fragment="info1">
+        <div th:if="${sucDelMes}">
+            <h5 style="color: #D90416;" th:text="${sucDelMes}"></h5>
+        </div>
+        <div th:each="user : ${users}">
+            <div th:if="${user.username} == ${#httpServletRequest.remoteUser}">
+                <b>Your username:</b><p th:text="${user.username}"></p>
+                <b>Your email:</b><p th:text="${user.email}"></p>
+                <b>Your telephone:</b><p th:text="${user.phone}"></p>
+            </div>
+
+            <div sec:authorize="hasAuthority('ADMIN')" th:if="${user.username} == ${#httpServletRequest.remoteUser}">
+                <h3>Оставленные заявки на просмотр Вашего фильма</h3>
+                <table style="text-align: center;vertical-align: center; border-collapse: collapse;" cellpadding="7px" border="3px">
+                    <tr>
+                        <th style="padding: 2px;border: 1px solid">ID Session</th>
+                        <th style="padding: 2px;border: 1px solid">Название Фильма</th>
+                        <th style="padding: 2px;border: 1px solid">Желаемая дата показа</th>
+                        <th style="padding: 2px;border: 1px solid">Количество Билетов</th>
+                        <th style="padding: 2px;border: 1px solid">Конечная стоимость</th>
+                        <th style="padding: 2px;border: 1px solid">Телефон Покупателя</th>
+                        <th style="padding: 2px;border: 1px solid">Продавец</th>
+                        <th style="padding: 2px;border: 1px solid">Покупатель</th>
+                        <th style="padding: 2px;border: 1px solid">Удалить заявку</th>
+                    </tr>
+                    <tr th:each="filmS : ${filmSessions}">
+                        <th:block th:if="${user.username} == ${filmS.sellerUsername}">
+                            <td th:text="${filmS.id}" th:name="filmSId" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.sessionFilm.getNameFilm()}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.sessionDate}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.totalTickets}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.sessionTotalPrice}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.buyerPhone}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.sellerUsername}" style="padding: 2px;border: 1px solid"></td>
+                            <td th:text="${filmS.buyerUsername}" style="padding: 2px;border: 1px solid"></td>
+                            <td style="padding: 2px;border: 1px solid"><a class="header__link" th:href="'/filmSessions/delete/' + ${filmS.id}">Удалить заявку</a></td>
+                        </th:block>
+                    </tr>
+                </table>
+            </div>
+            <div sec:authorize="hasAnyAuthority('ADMIN','USER')" th:if="${user.username} == ${#httpServletRequest.remoteUser}">
+                <h3>Заявки, которые вы оставили на просмотр фильма</h3>
+                <table style="text-align: center;vertical-align: center;border-collapse: collapse;" cellpadding="7px" border="3px">
+                    <tr>
+                        <th style="padding: 2px;border: 1px solid">ID Session</th>
+                        <th style="padding: 2px;border: 1px solid">Название Фильма</th>
+                        <th style="padding: 2px;border: 1px solid">Желаемая дата показа</th>
+                        <th style="padding: 2px;border: 1px solid">Количество Билетов</th>
+                        <th style="padding: 2px;border: 1px solid">Конечная стоимость</th>
+                        <th style="padding: 2px;border: 1px solid">Телефон Покупателя</th>
+                        <th style="padding: 2px;border: 1px solid">Продавец</th>
+                        <th style="padding: 2px;border: 1px solid">Покупатель</th>
+                        <th style="padding: 2px;border: 1px solid">Удалить заявку</th>
+                    </tr>
+                    <tr th:each="filmS : ${filmSessions}">
+                        <th:block th:if="${user.username} == ${filmS.buyerUsername}">
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.id}" th:name="filmSId"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.sessionFilm.getNameFilm()}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.sessionDate}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.totalTickets}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.sessionTotalPrice}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.buyerPhone}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.sellerUsername}"></td>
+                            <td style="padding: 2px;border: 1px solid" th:text="${filmS.buyerUsername}"></td>
+                            <td style="padding: 2px;border: 1px solid"><a class="header__link" th:href="'/filmSessions/delete/' + ${filmS.id}">Удалить заявку</a></td>
+                        </th:block>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>

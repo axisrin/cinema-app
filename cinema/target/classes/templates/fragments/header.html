@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<header class="text-center mb-4" style="width: 100%" th:fragment="header1">
+    <a th:href="@{/}"><h1>.lowfilm</h1></a>
+    <div class="text-center mb-4" style="display:flex; flex-direction: row; align-items: center; justify-content: center;">
+        <a class="header__link" th:href="@{/}">HOME</a>
+        <a class="header__link" th:href="@{/filmes}">FILMES</a>
+        <a class="header__link" sec:authorize ="hasAuthority('ADMIN')" th:href="@{/users}">USERS</a>
+        <th:block th:if="${#httpServletRequest.remoteUser}">
+            <a class="header__link" th:href="'/users/edit/profile/' + ${#httpServletRequest.remoteUser}" th:text="${#httpServletRequest.remoteUser}"></a>
+        </th:block>
+        <th:block th:if="!${#httpServletRequest.remoteUser}">
+            <a class="header__link" th:text="LOGIN" th:href="@{/login}"></a>
+        </th:block>
+        <th:block th:if="${#httpServletRequest.remoteUser}">
+            <div th:replace="~{fragments/logoutfr :: logout1}"></div>
+        </th:block>
+    </div>
+</header>
+</html>

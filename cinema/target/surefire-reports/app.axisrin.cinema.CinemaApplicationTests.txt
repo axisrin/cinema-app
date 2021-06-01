@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: app.axisrin.cinema.CinemaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.466 s - in app.axisrin.cinema.CinemaApplicationTests

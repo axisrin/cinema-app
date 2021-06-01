@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div style="margin-bottom: 2%;" th:fragment="filter1">
+    <div style="display: flex; flex-direction: row; margin-bottom: 1%; margin-top: 1%;
+    alignment-baseline: center; justify-content: space-between; align-items: center; border-bottom: 5px solid #8C0D24;  border-radius: 5px;">
+        <form method="post" class="filmFilter__form" action="/filmes/filterGenre">
+            <div class="registration__field"><label>По жанру:<input type="text" name="filterGenre" class="form-control" placeholder="Поиск по жанру"></label></div>
+            <button class="btn" style="background-color: #D9D4BA;" type="submit">Найти</button>
+        </form>
+        <form method="post" style="margin-left: 1%" class="filmFilter__form" action="/filmes/filterDate">
+            <div class="registration__field"><label>По дате:<input id="today" type="date" class="form-control" name="filterDate"></label></div>
+            <script>
+                var today = new Date();
+                document.getElementById("today").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+            </script>
+            <button class="btn" style="background-color: #D9D4BA;" type="submit">Найти</button>
+        </form>
+        <a href="/filmes" style="margin-left: 1%">Очистить фильтры</a>
+    </div>
+</div>
+
+</html>
