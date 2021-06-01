@@ -9,7 +9,7 @@ import java.sql.Date;
 @Entity
 public class Film {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nameFilm;
     private String descriptionFilm;
