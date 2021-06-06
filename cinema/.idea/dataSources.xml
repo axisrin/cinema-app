@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="30ce74ba-bb1a-4561-adaa-04fcf005d45e">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3307</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="UTC" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="postgres@localhost" uuid="bec04875-34aa-465d-b5aa-7e3eb3620235">
+    <data-source source="LOCAL" name="low-film@localhost" uuid="ae94ac9e-82c5-45c2-81b6-2fc3702f6c19">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/low-film</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -23,7 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d92e08-edbe-45a9-88ca-8b51ae25e561" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d/storage_v2/_src_/database/dfl4osgi0vkb0l.KT90HQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d/storage_v2/_src_/database/dfl4osgi0vkb0l.KT90HQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d/storage_v2/_src_/database/dfl4osgi0vkb0l.KT90HQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d/storage_v2/_src_/database/dfl4osgi0vkb0l.KT90HQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/307bf9aa-a43c-4b4c-bd60-f3fe3fcb2b7d/storage_v2/_src_/database/dfl4osgi0vkb0l.KT90HQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/low-film.iml" beforeDir="false" afterPath="$PROJECT_DIR$/low-film.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/axisrin/cinema/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/axisrin/cinema/CinemaApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/axisrin/cinema/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/axisrin/cinema/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/docker/app.axisrin/low-film/image-id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/docker/app.axisrin/low-film/image-name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/docker/app.axisrin/low-film/repository" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/docker/app.axisrin/low-film/tag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/axisrin/cinema/CinemaApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +59,7 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -75,20 +95,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ВУЗ\Шаблоны Джава\1-java-cors\cinema-app\cinema\src\main\resources\templates\fragments\film" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.axisrin.cinema.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ВУЗ\Шаблоны Джава\1-java-cors\cinema-app\cinema\src\main\resources\templates" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ВУЗ\Шаблоны Джава\1-java-cors\cinema-app\cinema\src\main\resources\templates\fragments\film" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CinemaApplication">
+  <component name="RunManager" selected="JUnit.UserServiceTest.findByName">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -96,6 +124,37 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="low-film" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.axisrin.cinema.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.axisrin.cinema.services" />
+      <option name="MAIN_CLASS_NAME" value="app.axisrin.cinema.services.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.findByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="low-film" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.axisrin.cinema.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.axisrin.cinema.services" />
+      <option name="MAIN_CLASS_NAME" value="app.axisrin.cinema.services.UserServiceTest" />
+      <option name="METHOD_NAME" value="findByName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,7 +195,15 @@
     <list>
       <item itemvalue="Maven.low-film" />
       <item itemvalue="Spring Boot.CinemaApplication" />
+      <item itemvalue="JUnit.UserServiceTest.findByName" />
+      <item itemvalue="JUnit.UserServiceTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceTest.findByName" />
+        <item itemvalue="JUnit.UserServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -186,6 +253,7 @@
       <workItem from="1622498809889" duration="892000" />
       <workItem from="1622499974506" duration="5640000" />
       <workItem from="1622533406537" duration="6627000" />
+      <workItem from="1622997875302" duration="2853000" />
     </task>
     <servers />
   </component>
@@ -213,11 +281,12 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="158" y="256" key="#SQL_Dialects/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622383604692" />
-    <state x="2259" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622546085466">
-      <screen x="1920" y="-124" width="1920" height="1170" />
+    <state x="2382" y="272" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622997956136">
+      <screen x="1920" y="-124" width="1920" height="1200" />
     </state>
     <state x="271" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622502585015" />
     <state x="2259" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622546085466" />
+    <state x="2382" y="272" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1622997956136" />
     <state x="865" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1622411269722">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -234,30 +303,34 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="306" y="200" key="FileChooserDialogImpl/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622533938994" />
-    <state width="1879" height="398" key="GridCell.Tab.0.bottom" timestamp="1622545053183">
-      <screen x="1920" y="-124" width="1920" height="1170" />
+    <state width="1879" height="333" key="GridCell.Tab.0.bottom" timestamp="1623000794857">
+      <screen x="1920" y="-124" width="1920" height="1200" />
     </state>
     <state width="1495" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622505704081" />
     <state width="1879" height="398" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622545053183" />
     <state width="1495" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1622472959158" />
-    <state width="1879" height="398" key="GridCell.Tab.0.center" timestamp="1622545053183">
-      <screen x="1920" y="-124" width="1920" height="1170" />
+    <state width="1879" height="333" key="GridCell.Tab.0.bottom/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1623000794857" />
+    <state width="1879" height="333" key="GridCell.Tab.0.center" timestamp="1623000794857">
+      <screen x="1920" y="-124" width="1920" height="1200" />
     </state>
     <state width="1495" height="265" key="GridCell.Tab.0.center/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622505704081" />
     <state width="1879" height="398" key="GridCell.Tab.0.center/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622545053183" />
     <state width="1495" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1622472959158" />
-    <state width="1879" height="398" key="GridCell.Tab.0.left" timestamp="1622545053182">
-      <screen x="1920" y="-124" width="1920" height="1170" />
+    <state width="1879" height="333" key="GridCell.Tab.0.center/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1623000794857" />
+    <state width="1879" height="333" key="GridCell.Tab.0.left" timestamp="1623000794857">
+      <screen x="1920" y="-124" width="1920" height="1200" />
     </state>
     <state width="1495" height="265" key="GridCell.Tab.0.left/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622505704080" />
     <state width="1879" height="398" key="GridCell.Tab.0.left/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622545053182" />
     <state width="1495" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1622472959158" />
-    <state width="1879" height="398" key="GridCell.Tab.0.right" timestamp="1622545053183">
-      <screen x="1920" y="-124" width="1920" height="1170" />
+    <state width="1879" height="333" key="GridCell.Tab.0.left/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1623000794857" />
+    <state width="1879" height="333" key="GridCell.Tab.0.right" timestamp="1623000794857">
+      <screen x="1920" y="-124" width="1920" height="1200" />
     </state>
     <state width="1495" height="265" key="GridCell.Tab.0.right/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622505704081" />
     <state width="1879" height="398" key="GridCell.Tab.0.right/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622545053183" />
     <state width="1495" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1622472959158" />
+    <state width="1879" height="333" key="GridCell.Tab.0.right/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1623000794857" />
     <state width="1879" height="398" key="GridCell.Tab.1.bottom" timestamp="1622545052376">
       <screen x="1920" y="-124" width="1920" height="1170" />
     </state>
@@ -306,6 +379,10 @@
     <state width="1495" height="265" key="GridCell.Tab.2.right/0.0.1536.834/1920.-124.1920.1170@0.0.1536.834" timestamp="1622499118923" />
     <state width="1879" height="398" key="GridCell.Tab.2.right/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622545052376" />
     <state width="1495" height="265" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1622472959159" />
+    <state width="201" height="469" key="HiddenNamespacesPopup" timestamp="1622997989000">
+      <screen x="1920" y="-124" width="1920" height="1200" />
+    </state>
+    <state width="201" height="469" key="HiddenNamespacesPopup/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1622997989000" />
     <state x="250" y="145" key="Maven.ArtifactSearchDialog" timestamp="1622492795150">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -327,6 +404,10 @@
       <screen x="1920" y="-124" width="1920" height="1170" />
     </state>
     <state x="2582" y="343" width="282" height="225" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/0.0.1536.834/1920.-124.1920.1170@1920.-124.1920.1170" timestamp="1622503865542" />
+    <state x="2651" y="290" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1622998561000">
+      <screen x="1920" y="-124" width="1920" height="1200" />
+    </state>
+    <state x="2651" y="290" key="com.intellij.testIntegration.createTest.CreateTestDialog/62.0.1474.864/1920.-124.1920.1200@1920.-124.1920.1200" timestamp="1622998561000" />
     <state x="499" y="181" key="extract.method.dialog" timestamp="1621929106844">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

@@ -18,6 +18,10 @@ public class UserService implements UserDetailsService {
         return userRepo.findByUsername(username);
     }
 
+    public User findByName(String username) {
+        return userRepo.findByUsername(username);
+    }
+
     public boolean activateUser(String code) {
         User user = userRepo.findByActivateCode(code);
         if (user == null)
